@@ -22,6 +22,8 @@ public class Order {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
+    @CreationTimestamp
+    @Column(nullable = false, updatable = false)
     private OffsetDateTime orderDate;
 
     @OneToMany(mappedBy = "order")
