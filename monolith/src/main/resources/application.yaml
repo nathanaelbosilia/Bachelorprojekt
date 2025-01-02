@@ -5,3 +5,7 @@ spring:
   docker:
     compose:
       file: monolith/compose.yaml
+
+  jpa:
+    hibernate:
+      ddl-auto: create
