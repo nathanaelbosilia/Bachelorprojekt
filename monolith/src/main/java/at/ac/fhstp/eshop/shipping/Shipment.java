@@ -2,6 +2,7 @@ package at.ac.fhstp.eshop.shipping;
 
 import at.ac.fhstp.eshop.ordering.Order;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +16,7 @@ public class Shipment {
 
     @Id
     @GeneratedValue
+    @Setter(AccessLevel.NONE)
     private UUID id;
 
     @ManyToOne
