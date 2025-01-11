@@ -30,4 +30,11 @@ public class RestControllerExceptionHandler {
         });
         return ResponseEntity.badRequest().body(errors);
     }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleGenericExceptions(Exception exception) {
+        Logger logger = Logger.getLogger(this.getClass().getName());
+        logger.warning(exception.getMessage());
+        return new ResponseEntity<>(exception.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }
