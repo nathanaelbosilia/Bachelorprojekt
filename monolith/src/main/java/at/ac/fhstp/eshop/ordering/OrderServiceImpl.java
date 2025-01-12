@@ -49,7 +49,8 @@ public class OrderServiceImpl implements OrderService {
     public OrderDto createOrder(CreateOrderDto createOrderDto) {
         // get article
         Article article = articleRepository.findById(createOrderDto.articleId())
-                .orElseThrow(() -> new ResourceNotFoundException("Article not found"));
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Article with ID " + createOrderDto.articleId() + " not found"));
 
         // check if enough articles are available
         if (createOrderDto.quantity() > article.getAvailableQuantity()) {
@@ -58,7 +59,8 @@ public class OrderServiceImpl implements OrderService {
 
         // get customer
         Customer customer = customerRepository.findById(createOrderDto.customerId())
-                .orElseThrow(() -> new ResourceNotFoundException("Customer not found"));
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Customer with ID " + createOrderDto.customerId() + " not found"));
 
         // update available quantity
         article.setAvailableQuantity(article.getAvailableQuantity() - createOrderDto.quantity());
