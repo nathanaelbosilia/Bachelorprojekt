@@ -2,6 +2,9 @@ spring:
   application:
     name: eshop
 
+  profiles:
+    active: chaos-monkey
+
   docker:
     compose:
       file: monolith/compose.yaml
@@ -25,3 +28,20 @@ spring:
   sql:
     init:
       mode: always
+
+chaos:
+  monkey:
+    enabled: false
+
+management:
+  endpoint:
+    chaosmonkey:
+      enabled: true
+
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - chaosmonkey
