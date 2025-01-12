@@ -88,7 +88,7 @@ public class OrderServiceImpl implements OrderService {
                 .orElseThrow(() -> new ResourceNotFoundException("Courier with name " + courierName + " not found"));
 
         // create shipment
-        CreateShipmentDto createShipmentDto = new CreateShipmentDto(createdOrder.getId(), courier.getId());
+        CreateShipmentDto createShipmentDto = new CreateShipmentDto(createdOrder, courier);
         ShipmentDto shipmentDto = shipmentService.createShipment(createShipmentDto);
 
         // send shipment notification

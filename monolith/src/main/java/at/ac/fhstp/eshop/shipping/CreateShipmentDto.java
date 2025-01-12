@@ -1,6 +1,6 @@
 package at.ac.fhstp.eshop.shipping;
 
-import java.util.UUID;
+import at.ac.fhstp.eshop.ordering.Order;
 
-public record CreateShipmentDto(UUID orderId, UUID courierId) {
+public record CreateShipmentDto(Order order, Courier courier) {
 }
