@@ -43,11 +43,11 @@ public class OrderServiceImpl implements OrderService {
             throw new ArticleUnavailableException("Not enough articles available");
         }
 
-        article.setAvailableQuantity(article.getAvailableQuantity() - createOrderDto.quantity());
-        articleRepository.save(article);
-
         Customer customer = customerRepository.findById(createOrderDto.customerId())
                 .orElseThrow(() -> new ResourceNotFoundException("Customer not found"));
+
+        article.setAvailableQuantity(article.getAvailableQuantity() - createOrderDto.quantity());
+        articleRepository.save(article);
 
         OrderPosition orderPosition = new OrderPosition();
         orderPosition.setArticle(article);
