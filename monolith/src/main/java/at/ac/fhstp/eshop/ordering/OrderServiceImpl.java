@@ -2,10 +2,14 @@ package at.ac.fhstp.eshop.ordering;
 
 import at.ac.fhstp.eshop.common.exceptions.ArticleUnavailableException;
 import at.ac.fhstp.eshop.common.exceptions.ResourceNotFoundException;
+import at.ac.fhstp.eshop.notification.NotificationService;
+import at.ac.fhstp.eshop.shipping.*;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -13,12 +17,19 @@ public class OrderServiceImpl implements OrderService {
     private final ArticleRepository articleRepository;
     private final CustomerRepository customerRepository;
     private final OrderRepository orderRepository;
+    private final CourierRepository courierRepository;
+    private final ShipmentService shipmentService;
+    private final NotificationService notificationService;
 
     public OrderServiceImpl(ArticleRepository articleRepository, CustomerRepository customerRepository,
-                            OrderRepository orderRepository) {
+                            OrderRepository orderRepository, CourierRepository courierRepository,
+                            ShipmentService shipmentService, NotificationService notificationService) {
         this.articleRepository = articleRepository;
         this.customerRepository = customerRepository;
         this.orderRepository = orderRepository;
+        this.courierRepository = courierRepository;
+        this.shipmentService = shipmentService;
+        this.notificationService = notificationService;
     }
 
     @Override
@@ -59,6 +70,24 @@ public class OrderServiceImpl implements OrderService {
         order.addOrderPosition(orderPosition);
 
         Order createdOrder = orderRepository.save(order);
-        return OrderMapper.toDto(createdOrder);
+        OrderDto createdOrderDto = OrderMapper.toDto(createdOrder);
+
+        // send order confirmation notification
+        notificationService.sendOrderConfirmationNotification(createdOrderDto);
+
+        // get courier
+        final String courierName = "DHL";
+        Courier courier = courierRepository.findByName(courierName)
+                .orElseThrow(() -> new ResourceNotFoundException("Courier with name " + courierName + " not found"));
+
+        // create shipment
+        CreateShipmentDto createShipmentDto = new CreateShipmentDto(createdOrder.getId(), courier.getId());
+        ShipmentDto shipmentDto = shipmentService.createShipment(createShipmentDto);
+
+        // send shipment notification
+        notificationService.sendShipmentNotification(shipmentDto, createdOrderDto.customerDto());
+
+        // return created order
+        return createdOrderDto;
     }
 }
