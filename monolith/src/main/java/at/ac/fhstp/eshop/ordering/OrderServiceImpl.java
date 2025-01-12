@@ -6,6 +6,8 @@ import at.ac.fhstp.eshop.notification.NotificationService;
 import at.ac.fhstp.eshop.shipping.*;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.support.TransactionSynchronization;
+import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 import java.util.List;
 import java.util.Optional;
@@ -81,9 +83,6 @@ public class OrderServiceImpl implements OrderService {
         Order createdOrder = orderRepository.save(order);
         OrderDto createdOrderDto = OrderMapper.toDto(createdOrder);
 
-        // send order confirmation notification
-        notificationService.sendOrderConfirmationNotification(createdOrderDto);
-
         // get courier
         final String courierName = "DHL";
         Courier courier = courierRepository.findByName(courierName)
@@ -93,8 +92,16 @@ public class OrderServiceImpl implements OrderService {
         CreateShipmentDto createShipmentDto = new CreateShipmentDto(createdOrder, courier);
         ShipmentDto shipmentDto = shipmentService.createShipment(createShipmentDto);
 
-        // send shipment notification
-        notificationService.sendShipmentNotification(shipmentDto, createdOrderDto.customerDto());
+        // send notifications only after successful transaction commit
+        TransactionSynchronizationManager.registerSynchronization(new TransactionSynchronization() {
+            @Override
+            public void afterCommit() {
+                // send order confirmation notification
+                notificationService.sendOrderConfirmationNotification(createdOrderDto);
+                // send shipment notification
+                notificationService.sendShipmentNotification(shipmentDto, createdOrderDto.customerDto());
+            }
+        });
 
         // return created order
         return createdOrderDto;
