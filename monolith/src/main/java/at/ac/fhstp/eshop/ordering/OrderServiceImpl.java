@@ -47,28 +47,35 @@ public class OrderServiceImpl implements OrderService {
     @Override
     @Transactional
     public OrderDto createOrder(CreateOrderDto createOrderDto) {
+        // get article
         Article article = articleRepository.findById(createOrderDto.articleId())
                 .orElseThrow(() -> new ResourceNotFoundException("Article not found"));
 
-        if(createOrderDto.quantity() > article.getAvailableQuantity()) {
+        // check if enough articles are available
+        if (createOrderDto.quantity() > article.getAvailableQuantity()) {
             throw new ArticleUnavailableException("Not enough articles available");
         }
 
+        // get customer
         Customer customer = customerRepository.findById(createOrderDto.customerId())
                 .orElseThrow(() -> new ResourceNotFoundException("Customer not found"));
 
+        // update available quantity
         article.setAvailableQuantity(article.getAvailableQuantity() - createOrderDto.quantity());
         articleRepository.save(article);
 
+        // create order position
         OrderPosition orderPosition = new OrderPosition();
         orderPosition.setArticle(article);
         orderPosition.setQuantity(createOrderDto.quantity());
         orderPosition.setPrice(article.getPrice());
 
+        // create order
         Order order = new Order();
         order.setCustomer(customer);
         order.addOrderPosition(orderPosition);
 
+        // save order and map to dto
         Order createdOrder = orderRepository.save(order);
         OrderDto createdOrderDto = OrderMapper.toDto(createdOrder);
 
