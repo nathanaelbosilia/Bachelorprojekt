@@ -1,5 +1,6 @@
 package at.ac.fhstp.eshop.ordering;
 
+import at.ac.fhstp.eshop.common.exceptions.ArticleUnavailableException;
 import at.ac.fhstp.eshop.common.exceptions.ResourceNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
@@ -39,7 +40,7 @@ public class OrderServiceImpl implements OrderService {
                 .orElseThrow(() -> new ResourceNotFoundException("Article not found"));
 
         if(createOrderDto.quantity() > article.getAvailableQuantity()) {
-            throw new RuntimeException("Not enough articles available"); // TODO: create custom exception
+            throw new ArticleUnavailableException("Not enough articles available");
         }
 
         article.setAvailableQuantity(article.getAvailableQuantity() - createOrderDto.quantity());
