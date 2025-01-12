@@ -10,6 +10,8 @@ VALUES (gen_random_uuid(), 'iPhone 14', 999.99, 100),
        (gen_random_uuid(), 'Nokia XR20', 499.99, 110),
        (gen_random_uuid(), 'Asus ROG Phone 6', 1099.99, 40);
 
+INSERT INTO couriers (id, name) VALUES (gen_random_uuid(), 'DHL');
+
 INSERT INTO articles (id, name, price, available_quantity)
 VALUES ('25984125-ebb5-4d43-81a7-033bee9cf6df', 'iPhone 13', 599.99, 200);
 
