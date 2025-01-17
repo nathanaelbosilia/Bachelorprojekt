@@ -1,5 +1,8 @@
 package at.ac.fhstp.eshop.shipping;
 
+import lombok.Getter;
+
+@Getter
 public enum ShipmentState {
 
     ANNOUNCED("The shipment has been electronically announced."),
@@ -14,7 +17,4 @@ public enum ShipmentState {
         this.description = description;
     }
 
-    public String getDescription() {
-        return description;
-    }
 }
