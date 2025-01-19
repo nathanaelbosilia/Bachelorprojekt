@@ -16,6 +16,6 @@ public class OrderEventConsumer {
     @KafkaListener(topics = "${spring.kafka.topics.order-created}", containerFactory = "orderCreatedEventListener")
     public void consumeOrderCreatedEvent(OrderCreatedEvent orderCreatedEvent) {
         System.out.println("Received OrderCreatedEvent: " + orderCreatedEvent.id());
-        shipmentService.createShipment(orderCreatedEvent.orderDto());
+        shipmentService.createShipment(orderCreatedEvent.orderDto().id());
     }
 }
