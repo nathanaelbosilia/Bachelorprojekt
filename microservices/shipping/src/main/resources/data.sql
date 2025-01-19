@@ -1,0 +1,1 @@
+INSERT INTO couriers (id, name) VALUES (gen_random_uuid(), 'DHL');
