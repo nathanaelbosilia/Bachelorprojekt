@@ -4,3 +4,37 @@ server:
 spring:
   application:
     name: shipping
+
+  docker:
+    compose:
+      file: microservices/shipping/compose.yaml
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    topics:
+      order-created: orderCreatedTopic
+    consumer:
+      group-id: shipping-service
+    backoff:
+      interval: 1000
+      max-attempts: 3
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+    # By default, data.sql scripts get executed before Hibernate is initialized.
+    # We need Hibernate to create our tables before inserting the data into them.
+    # To achieve this, we need to defer the initialization of our data source.
+    defer-datasource-initialization: true
+
+  # When we run the project with this file on the classpath, Spring will pick it up and use it to populate the tables.
+  # For any script-based initialization, i.e. inserting data via data.sql or creating schema via schema.sql we need to set this property.
+  sql:
+    init:
+      mode: always
