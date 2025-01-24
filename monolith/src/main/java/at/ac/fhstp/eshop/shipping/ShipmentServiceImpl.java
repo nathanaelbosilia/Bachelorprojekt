@@ -26,7 +26,7 @@ public class ShipmentServiceImpl implements ShipmentService {
         try {
             createdShipment = shipmentRepository.save(shipment);
         } catch (Exception exception) {
-            throw new ResourceNotFoundException("Could not create shipment");
+            throw new ResourceNotFoundException("Could not create shipment"); // TODO: add custom exception
         }
 
         return ShipmentMapper.toDto(createdShipment);
