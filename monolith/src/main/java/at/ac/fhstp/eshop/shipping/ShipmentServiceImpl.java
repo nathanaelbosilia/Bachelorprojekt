@@ -28,6 +28,7 @@ public class ShipmentServiceImpl implements ShipmentService {
         } catch (Exception exception) {
             throw new ResourceNotFoundException("Could not create shipment");
         }
+
         return ShipmentMapper.toDto(createdShipment);
     }
 }
