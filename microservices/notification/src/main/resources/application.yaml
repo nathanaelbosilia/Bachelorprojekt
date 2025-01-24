@@ -1,3 +1,14 @@
 spring:
   application:
     name: notification
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    topics:
+      order-created: orderCreatedTopic
+      shipment-created: shipmentCreatedTopic
+    consumer:
+      group-id: notification-service
+    backoff:
+      interval: 1000
+      max-attempts: 3
