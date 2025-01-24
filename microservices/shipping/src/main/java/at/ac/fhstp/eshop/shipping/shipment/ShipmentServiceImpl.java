@@ -3,6 +3,7 @@ package at.ac.fhstp.eshop.shipping.shipment;
 import at.ac.fhstp.eshop.shipping.configuration.KafkaTopicNames;
 import at.ac.fhstp.eshop.shipping.courier.Courier;
 import at.ac.fhstp.eshop.shipping.courier.CourierService;
+import at.ac.fhstp.eshop.shipping.events.OrderDto;
 import at.ac.fhstp.eshop.shipping.events.ShipmentCreatedEvent;
 import at.ac.fhstp.eshop.shipping.exceptions.ResourceNotFoundException;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -36,13 +37,13 @@ public class ShipmentServiceImpl implements ShipmentService {
     }
 
     @Override
-    public ShipmentDto createShipment(UUID orderId) {
-        final String trackingLink = "https://eshop.fhstp.ac.at/tracking/" + orderId;
+    public void createShipment(OrderDto orderDto) {
+        final String trackingLink = "https://eshop.fhstp.ac.at/tracking/" + orderDto.id();
 
         Courier courier = courierService.getCourierByName("DHL");
 
         Shipment shipment = new Shipment();
-        shipment.setOrderId(orderId);
+        shipment.setOrderId(orderDto.id());
         shipment.setCourier(courier);
         shipment.setState(ShipmentState.ANNOUNCED);
         shipment.setTrackingLink(trackingLink);
@@ -55,14 +56,12 @@ public class ShipmentServiceImpl implements ShipmentService {
             throw new ResourceNotFoundException("Could not create shipment"); // TODO: create custom exception
         }
 
-        publishShipmentCreatedEvent(kafkaTopicNames.shipmentCreated(), createdShipmentDto);
-
-        return createdShipmentDto;
+        publishShipmentCreatedEvent(kafkaTopicNames.shipmentCreated(), createdShipmentDto, orderDto);
     }
 
-    public void publishShipmentCreatedEvent(String topic, ShipmentDto shipmentDto) {
+    public void publishShipmentCreatedEvent(String topic, ShipmentDto shipmentDto, OrderDto orderDto) {
         ShipmentCreatedEvent shipmentCreatedEvent =
-                new ShipmentCreatedEvent(UUID.randomUUID(), OffsetDateTime.now(), shipmentDto);
+                new ShipmentCreatedEvent(UUID.randomUUID(), OffsetDateTime.now(), shipmentDto, orderDto);
         kafkaTemplate.send(topic, shipmentDto.id().toString(), shipmentCreatedEvent);
     }
 }
