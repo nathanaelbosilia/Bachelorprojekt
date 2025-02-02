@@ -19,7 +19,8 @@ export const options = {
     }
 }
 export default function () {
-    const url = "http://localhost:8080/api/orders";
+    const PORT = __ENV.PORT || "8080";
+    const url = `http://localhost:${PORT}/api/orders`;
 
     const headers = {
         'Content-Type': 'application/json'
