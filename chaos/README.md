@@ -6,3 +6,9 @@ After that, you should be able to check the version of the installed chaos toolk
 
 To activate an experiment, simply run ``chaos run experiments/request_assaults/latency_assault/monolith.json``.
 You will have to adjust the path to the desired experiment accordingly.
+
+To run the k6 load test on its own and not from within chaos toolkit, you would need to remove the chaosk6 
+run_script action inside an experiment and run the experiment with the ``--rollback-strategy=never`` flag.
+After that, you can start the k6 load test by running ``k6 run k6/path/to/test/test-name.ts``.
+After the load test, you would need to run the experiment again but without the rollback flag to disable chaos monkey.
+Unfortunately, I have not yet found a way of only running the rollback part of the experiment without the other actions.
