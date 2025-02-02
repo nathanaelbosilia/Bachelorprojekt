@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+  namespace: monolith
+  labels:
+    app: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      name: postgres
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:17.2-alpine
+          env:
+            - name: POSTGRES_DB
+              value: eshop
+            - name: POSTGRES_PASSWORD
+              value: eshop
+            - name: POSTGRES_USER
+              value: eshop
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - mountPath: /data/db
+              name: storage
+          imagePullPolicy: Always
+          #resources:
+          #  requests:
+          #    cpu: 100m
+          #    memory: 256Mi
+          #  limits:
+          #    cpu: 250m
+          #    memory: 512Mi
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: postgres-pvc
+      restartPolicy: Always
+      
