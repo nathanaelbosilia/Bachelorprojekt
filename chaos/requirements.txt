@@ -1,11 +1,14 @@
 certifi==2024.12.14
 chaostoolkit==1.19.0
+chaostoolkit-k6==0.3.4
 chaostoolkit-lib==1.44.0
+chaostoolkit-spring==0.3.2
 charset-normalizer==3.4.1
 click==8.1.8
 click-plugins==1.1.1
 idna==3.10
 importlib_metadata==8.5.0
+logzero==1.7.0
 python-json-logger==3.2.1
 PyYAML==6.0.2
 requests==2.32.3
