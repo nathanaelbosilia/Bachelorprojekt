@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: application
+  namespace: monolith
+  labels:
+    app: application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: application
+  template:
+    metadata:
+      name: application
+      labels:
+        app: application
+    spec:
+      containers:
+        - name: application
+          image: nbosilia/eshop-monolith:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/eshop
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: eshop
+            - name: SPRING_DATASOURCE_USERNAME
+              value: eshop
+          imagePullPolicy: Always
+          #resources:
+          #  requests:
+          #    cpu: 100m
+          #    memory: 256Mi
+          #  limits:
+          #    cpu: 250m
+          #    memory: 512Mi
+      restartPolicy: Always
+      initContainers:
+        - name: wait-for-postgres
+          image: busybox
+          command: ['sh', '-c', 'until nc -zv postgres 5432; do echo waiting for postgres; sleep 2; done;']
+          #resources:
+          #  requests:
+          #    cpu: 1m
+          #    memory: 50Mi
+          #  limits:
+          #    cpu: 75m
+          #    memory: 128Mi
