@@ -3,3 +3,6 @@ To check if the venv is activated, you can run ``which python``. It should point
 To deactivate it, simply run ``deactivate``.
 To install the dependencies, run ``pip install -r requirements.txt``.
 After that, you should be able to check the version of the installed chaos toolkit by running ``chaos --version``.
+
+To activate an experiment, simply run ``chaos run experiments/request_assaults/latency_assault/monolith.json``.
+You will have to adjust the path to the desired experiment accordingly.
