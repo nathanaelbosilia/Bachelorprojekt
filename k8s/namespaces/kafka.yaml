@@ -1,0 +1,5 @@
+# this has to be applied before the other resources
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kafka
