@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ordering-postgres-db
+  namespace: microservices
+spec:
+  selector:
+    app: ordering-postgres-db
+  ports:
+    - port: 5433
+      targetPort: 5432
+  type: ClusterIP

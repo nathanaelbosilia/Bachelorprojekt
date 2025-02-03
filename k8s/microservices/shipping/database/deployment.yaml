@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shipping-postgres-db
+  namespace: microservices
+  labels:
+    app: shipping-postgres-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shipping-postgres-db
+  template:
+    metadata:
+      name: shipping-postgres-db
+      labels:
+        app: shipping-postgres-db
+    spec:
+      containers:
+        - name: shipping-postgres-db
+          image: postgres:17.2-alpine
+          env:
+            - name: POSTGRES_DB
+              value: shipping
+            - name: POSTGRES_PASSWORD
+              value: shipping
+            - name: POSTGRES_USER
+              value: shipping
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - mountPath: /data/db
+              name: storage
+          imagePullPolicy: Always
+          #resources:
+          #  requests:
+          #    cpu: 100m
+          #    memory: 256Mi
+          #  limits:
+          #    cpu: 250m
+          #    memory: 512Mi
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: shipping-postgres-db-pvc
+      restartPolicy: Always
+      

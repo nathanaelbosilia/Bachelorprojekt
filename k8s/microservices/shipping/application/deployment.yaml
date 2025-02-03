@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shipping-application
+  namespace: microservices
+  labels:
+    app: shipping-application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shipping-application
+  template:
+    metadata:
+      name: shipping-application
+      labels:
+        app: shipping-application
+    spec:
+      containers:
+        - name: shipping-application
+          image: nbosilia/eshop-ms-shipping:latest
+          ports:
+            - containerPort: 8082
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://shipping-postgres-db:5434/shipping
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: shipping
+            - name: SPRING_DATASOURCE_USERNAME
+              value: shipping
+            - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
+              value: my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092
+          imagePullPolicy: Always
+          #resources:
+          #  requests:
+          #    cpu: 100m
+          #    memory: 256Mi
+          #  limits:
+          #    cpu: 250m
+          #    memory: 512Mi
+      restartPolicy: Always
+      initContainers:
+        - name: wait-for-postgres
+          image: busybox
+          command: ['sh', '-c', 'until nc -zv shipping-postgres-db 5434; do echo waiting for postgres; sleep 2; done;']
+          #resources:
+          #  requests:
+          #    cpu: 1m
+          #    memory: 50Mi
+          #  limits:
+          #    cpu: 75m
+          #    memory: 128Mi

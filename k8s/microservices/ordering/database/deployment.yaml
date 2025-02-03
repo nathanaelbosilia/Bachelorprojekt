@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ordering-postgres-db
+  namespace: microservices
+  labels:
+    app: ordering-postgres-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ordering-postgres-db
+  template:
+    metadata:
+      name: ordering-postgres-db
+      labels:
+        app: ordering-postgres-db
+    spec:
+      containers:
+        - name: ordering-postgres-db
+          image: postgres:17.2-alpine
+          env:
+            - name: POSTGRES_DB
+              value: ordering
+            - name: POSTGRES_PASSWORD
+              value: ordering
+            - name: POSTGRES_USER
+              value: ordering
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - mountPath: /data/db
+              name: storage
+          imagePullPolicy: Always
+          #resources:
+          #  requests:
+          #    cpu: 100m
+          #    memory: 256Mi
+          #  limits:
+          #    cpu: 250m
+          #    memory: 512Mi
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: ordering-postgres-db-pvc
+      restartPolicy: Always
+      

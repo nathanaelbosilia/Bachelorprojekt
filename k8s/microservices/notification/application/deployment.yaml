@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-application
+  namespace: microservices
+  labels:
+    app: notification-application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notification-application
+  template:
+    metadata:
+      name: notification-application
+      labels:
+        app: notification-application
+    spec:
+      containers:
+        - name: notification-application
+          image: nbosilia/eshop-ms-notification:latest
+          ports:
+            - containerPort: 8083
+          env:
+            - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
+              value: my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092
+          imagePullPolicy: Always
+          #resources:
+          #  requests:
+          #    cpu: 100m
+          #    memory: 256Mi
+          #  limits:
+          #    cpu: 250m
+          #    memory: 512Mi
+      restartPolicy: Always
