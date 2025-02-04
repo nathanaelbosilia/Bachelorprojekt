@@ -11,10 +11,10 @@ export const options = {
     },
     // https://grafana.com/docs/k6/latest/using-k6/scenarios/#scenario-executors
     scenarios: {
-        createOrder_shared_iterations: {
-            executor: 'shared-iterations',
+        createOrder_constant_vus: {
+            executor: 'constant-vus',
             vus: 100,
-            iterations: 80000
+            duration: '1m'
         }
     }
 }
