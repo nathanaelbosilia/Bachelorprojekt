@@ -15,6 +15,8 @@ spec:
       name: shipping-application
       labels:
         app: shipping-application
+      annotations:
+        chaos-mesh.org/target: "true"
     spec:
       containers:
         - name: shipping-application
