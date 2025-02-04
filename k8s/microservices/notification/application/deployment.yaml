@@ -20,8 +20,10 @@ spec:
         - name: notification-application
           image: nbosilia/eshop-ms-notification:latest
           ports:
-            - containerPort: 8083
+            - containerPort: 8080
           env:
+            - name: SERVER_PORT
+              value: "8080"
             - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
               value: my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092
           imagePullPolicy: Always

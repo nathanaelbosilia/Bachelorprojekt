@@ -20,10 +20,12 @@ spec:
         - name: shipping-application
           image: nbosilia/eshop-ms-shipping:latest
           ports:
-            - containerPort: 8082
+            - containerPort: 8080
           env:
+            - name: SERVER_PORT
+              value: "8080"
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://shipping-postgres-db:5434/shipping
+              value: jdbc:postgresql://shipping-postgres-db:5432/shipping
             - name: SPRING_DATASOURCE_PASSWORD
               value: shipping
             - name: SPRING_DATASOURCE_USERNAME
@@ -42,7 +44,7 @@ spec:
       initContainers:
         - name: wait-for-postgres
           image: busybox
-          command: ['sh', '-c', 'until nc -zv shipping-postgres-db 5434; do echo waiting for postgres; sleep 2; done;']
+          command: ['sh', '-c', 'until nc -zv shipping-postgres-db 5432; do echo waiting for postgres; sleep 2; done;']
           #resources:
           #  requests:
           #    cpu: 1m

@@ -4,9 +4,9 @@ metadata:
   name: notification-application
   namespace: microservices
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: notification-application
   ports:
-    - port: 8083
-      targetPort: 8083
+    - port: 8080
+      targetPort: 8080
