@@ -19,4 +19,4 @@ spec:
     mode: fixed
     value: '1'
     action: pod-kill
-    gracePeriod: 10
+    gracePeriod: 1
