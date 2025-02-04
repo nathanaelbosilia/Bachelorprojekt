@@ -1,0 +1,20 @@
+kind: Schedule
+apiVersion: chaos-mesh.org/v1alpha1
+metadata:
+  namespace: microservices
+  name: ms-pod-killer
+spec:
+  schedule: '*/20 * * * * *'
+  startingDeadlineSeconds: null
+  concurrencyPolicy: Forbid
+  historyLimit: 1
+  type: PodChaos
+  podChaos:
+    selector:
+      namespaces:
+        - microservices
+      annotationSelectors:
+        chaos-mesh.org/target: 'true'
+    mode: one
+    action: pod-kill
+    gracePeriod: 1
