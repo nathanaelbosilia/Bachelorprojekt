@@ -1,4 +1,4 @@
-FROM maven:3.9.9-eclipse-temurin-23-alpine as build
+FROM maven:3.9.9-eclipse-temurin-23-alpine AS build
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -15,6 +15,6 @@ COPY src ./src
 # Package the application
 RUN mvn package -DskipTests
 
-FROM openjdk:23-jdk-slim as runner
+FROM openjdk:23-jdk-slim AS runner
 COPY --from=build /app/target/*.jar /app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
