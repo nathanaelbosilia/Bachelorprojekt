@@ -14,7 +14,7 @@ export const options = {
         createOrder_shared_iterations: {
             executor: 'shared-iterations',
             vus: 100,
-            iterations: 80000
+            iterations: 100000
         }
     }
 }
