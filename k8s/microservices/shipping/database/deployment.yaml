@@ -32,13 +32,13 @@ spec:
             - mountPath: /data/db
               name: storage
           imagePullPolicy: Always
-          #resources:
-          #  requests:
-          #    cpu: 100m
-          #    memory: 256Mi
-          #  limits:
-          #    cpu: 250m
-          #    memory: 512Mi
+          resources:
+            requests:
+              cpu: 100m   # 100 millicores (0.1 vCPU)
+              memory: 256Mi  # 256 Megabytes
+            limits:
+              cpu: 250m   # 250 millicores (0.25 vCPU)
+              memory: 512Mi  # 512 Megabytes
       volumes:
         - name: storage
           persistentVolumeClaim:
