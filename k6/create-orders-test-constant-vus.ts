@@ -14,7 +14,7 @@ export const options = {
         createOrder_constant_vus: {
             executor: 'constant-vus',
             vus: 100,
-            duration: '1m'
+            duration: '2m'
         }
     }
 }
