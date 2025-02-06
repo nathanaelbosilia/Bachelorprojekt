@@ -13,7 +13,7 @@ export const options = {
     scenarios: {
         createOrder_constant_vus: {
             executor: 'constant-vus',
-            vus: 100,
+            vus: 20,
             duration: '2m'
         }
     }
