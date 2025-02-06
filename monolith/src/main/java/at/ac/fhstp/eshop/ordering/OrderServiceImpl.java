@@ -92,12 +92,11 @@ public class OrderServiceImpl implements OrderService {
         CreateShipmentDto createShipmentDto = new CreateShipmentDto(createdOrder, courier);
         ShipmentDto shipmentDto = shipmentService.createShipment(createShipmentDto);
 
-        // send order confirmation and shipment notifications only after successful transaction commit
+        // send order confirmation and shipment notification only after successful transaction commit
         TransactionSynchronizationManager.registerSynchronization(new TransactionSynchronization() {
             @Override
             public void afterCommit() {
-                notificationService.sendOrderConfirmationNotification(createdOrderDto);
-                notificationService.sendShipmentNotification(shipmentDto, createdOrderDto.customerDto());
+                notificationService.sendOrderConfirmationNotification(createdOrderDto, shipmentDto);
             }
         });
 
