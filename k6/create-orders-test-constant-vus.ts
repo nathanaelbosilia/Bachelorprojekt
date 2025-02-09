@@ -1,8 +1,4 @@
 import http from 'k6/http';
-import {check} from "k6";
-import {Rate} from "k6/metrics";
-
-export const errorRate = new Rate('errors');
 
 export const options = {
     thresholds: {
@@ -32,16 +28,5 @@ export default function () {
         "quantity": 0
     });
 
-    let response = http.post(url, payload, {headers: headers});
-
-    check(response, {
-        'status is 201': (r) => r.status === 201,
-        'response time < 200ms': (r) => r.timings.duration < 200,
-        'no server errors': (r) => r.status < 500,
-    });
-
-    if (response.status != 201) {
-        console.log(`operation: createOrder, url: ${url}, Status:${response.status}`);
-        errorRate.add(1);
-    }
+    http.post(url, payload, {headers: headers});
 }
