@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-postgres-db
+  namespace: microservices
+  labels:
+    app: notification-postgres-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notification-postgres-db
+  template:
+    metadata:
+      name: notification-postgres-db
+      labels:
+        app: notification-postgres-db
+    spec:
+      containers:
+        - name: notification-postgres-db
+          image: postgres:17.2-alpine
+          env:
+            - name: POSTGRES_DB
+              value: notification
+            - name: POSTGRES_PASSWORD
+              value: notification
+            - name: POSTGRES_USER
+              value: notification
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - mountPath: /data/db
+              name: storage
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 100m   # 100 millicores (0.1 vCPU)
+              memory: 256Mi  # 256 Megabytes
+            limits:
+              cpu: 250m   # 250 millicores (0.25 vCPU)
+              memory: 512Mi  # 512 Megabytes
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: notification-postgres-db-pvc
+      restartPolicy: Always
+      
