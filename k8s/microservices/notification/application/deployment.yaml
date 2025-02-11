@@ -26,6 +26,12 @@ spec:
           env:
             - name: SERVER_PORT
               value: "8080"
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://notification-postgres-db:5432/notification
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: notification
+            - name: SPRING_DATASOURCE_USERNAME
+              value: notification
             - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
               value: my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092
           imagePullPolicy: Always
@@ -37,3 +43,14 @@ spec:
               cpu: 250m   # 250 millicores (0.25 vCPU)
               memory: 512Mi  # 512 Megabytes
       restartPolicy: Always
+      initContainers:
+        - name: wait-for-postgres
+          image: busybox
+          command: ['sh', '-c', 'until nc -zv notification-postgres-db 5432; do echo waiting for postgres; sleep 2; done;']
+          resources:
+            requests:
+              cpu: 10m
+              memory: 128Mi
+            limits:
+              cpu: 50m
+              memory: 512Mi
