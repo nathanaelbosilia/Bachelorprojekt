@@ -3,6 +3,8 @@ package at.ac.fhstp.eshop.notification;
 import at.ac.fhstp.eshop.ordering.OrderDto;
 import at.ac.fhstp.eshop.shipping.ShipmentDto;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class NotificationServiceImpl implements NotificationService {
@@ -14,6 +16,7 @@ public class NotificationServiceImpl implements NotificationService {
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void sendOrderConfirmationNotification(OrderDto orderDto, ShipmentDto shipmentDto) {
         final String emailBody = "Dear " + orderDto.customerDto().firstName() + " " + orderDto.customerDto().lastName() + "," +
                 "\n\nThank you for your order with ID " + orderDto.id() + "." +
