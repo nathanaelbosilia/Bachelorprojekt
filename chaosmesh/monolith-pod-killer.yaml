@@ -1,8 +1,9 @@
+# kills the specified pod every 20 seconds until the schedule is deleted
 kind: Schedule
 apiVersion: chaos-mesh.org/v1alpha1
 metadata:
-  namespace: microservices
-  name: ms-pod-killer
+  namespace: monolith
+  name: monolith-pod-killer
 spec:
   schedule: '*/20 * * * * *'
   startingDeadlineSeconds: null
@@ -12,9 +13,10 @@ spec:
   podChaos:
     selector:
       namespaces:
-        - microservices
-      annotationSelectors:
-        chaos-mesh.org/target: 'true'
-    mode: one
+        - monolith
+      labelSelectors:
+        app: application
+    mode: fixed
+    value: '1'
     action: pod-kill
     gracePeriod: 1
