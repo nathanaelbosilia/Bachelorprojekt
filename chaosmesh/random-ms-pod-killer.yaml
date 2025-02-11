@@ -4,7 +4,7 @@ metadata:
   namespace: microservices
   name: random-ms-pod-killer
 spec:
-  schedule: '*/20 * * * * *'
+  schedule: '*/60 * * * * *'
   startingDeadlineSeconds: null
   concurrencyPolicy: Forbid
   historyLimit: 1

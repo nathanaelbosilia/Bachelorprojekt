@@ -5,7 +5,7 @@ metadata:
   namespace: monolith
   name: monolith-pod-killer
 spec:
-  schedule: '*/20 * * * * *'
+  schedule: '*/60 * * * * *'
   startingDeadlineSeconds: null
   concurrencyPolicy: Forbid
   historyLimit: 1
