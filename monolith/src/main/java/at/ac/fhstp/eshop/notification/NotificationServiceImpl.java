@@ -7,6 +7,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class NotificationServiceImpl implements NotificationService {
 
+    private final NotificationRepository notificationRepository;
+
+    public NotificationServiceImpl(NotificationRepository notificationRepository) {
+        this.notificationRepository = notificationRepository;
+    }
+
     @Override
     public void sendOrderConfirmationNotification(OrderDto orderDto, ShipmentDto shipmentDto) {
         final String emailBody = "Dear " + orderDto.customerDto().firstName() + " " + orderDto.customerDto().lastName() + "," +
@@ -16,5 +22,7 @@ public class NotificationServiceImpl implements NotificationService {
                 "\nYou can track your shipment here: " + shipmentDto.trackingLink() + "\n\n" +
                 "Best regards,\nYour eShop Team";
         System.out.println("E-Mail sent to " + orderDto.customerDto().email() + ":\n" + emailBody);
+        Notification notification = new Notification();
+        notificationRepository.save(notification);
     }
 }
