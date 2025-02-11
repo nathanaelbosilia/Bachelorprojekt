@@ -2,8 +2,8 @@ spring:
   application:
     name: eshop
 
-  profiles:
-    active: chaos-monkey
+  #profiles:
+    #active: chaos-monkey
 
   docker:
     compose:
@@ -29,14 +29,14 @@ spring:
     init:
       mode: always
 
-chaos:
-  monkey:
-    enabled: false
+#chaos:
+  #monkey:
+    #enabled: false
 
 management:
-  endpoint:
-    chaosmonkey:
-      enabled: true
+  #endpoint:
+    #chaosmonkey:
+      #enabled: true
 
   endpoints:
     web:
@@ -44,4 +44,4 @@ management:
         include:
           - health
           - info
-          - chaosmonkey
+          #- chaosmonkey
