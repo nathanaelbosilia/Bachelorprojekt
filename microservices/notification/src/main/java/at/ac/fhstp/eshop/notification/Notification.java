@@ -18,6 +18,8 @@ public class Notification {
     @Setter(AccessLevel.NONE)
     private UUID id;
 
+    // TODO: store relationships to orders/shipments and customers and add additional fields
+
     @Column(nullable = false, updatable = false)
     @Setter(AccessLevel.NONE)
     private OffsetDateTime timestamp;
