@@ -23,4 +23,9 @@ public class Notification {
     @Column(nullable = false, updatable = false)
     @Setter(AccessLevel.NONE)
     private OffsetDateTime timestamp;
+
+    @PrePersist
+    private void prePersist() {
+        this.timestamp = OffsetDateTime.now();
+    }
 }
