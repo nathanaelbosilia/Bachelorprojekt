@@ -5,6 +5,10 @@ spring:
   #profiles:
     #active: chaos-monkey
 
+  datasource:
+    hikari:
+      maximum-pool-size: 40
+
   docker:
     compose:
       file: monolith/compose.yaml
