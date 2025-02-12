@@ -16,7 +16,7 @@ public class NotificationServiceImpl implements NotificationService {
     }
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    @Transactional
     public void sendOrderConfirmationNotification(OrderDto orderDto, ShipmentDto shipmentDto) {
         final String emailBody = "Dear " + orderDto.customerDto().firstName() + " " + orderDto.customerDto().lastName() + "," +
                 "\n\nThank you for your order with ID " + orderDto.id() + "." +
