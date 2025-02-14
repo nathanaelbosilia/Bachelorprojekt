@@ -1,7 +1,4 @@
 import http from 'k6/http';
-import {Trend} from "k6/metrics";
-
-const http_reqs_201 = new Trend('http_reqs_201');
 
 export const options = {
     // https://grafana.com/docs/k6/latest/using-k6/scenarios/#scenario-executors
@@ -29,8 +26,5 @@ export default function () {
         "quantity": 0
     });
 
-    const response = http.post(url, payload, {headers: headers});
-    if (response.status == 201) {
-        http_reqs_201.add(response.timings.duration);
-    }
+    http.post(url, payload, {headers: headers});
 }
