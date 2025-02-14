@@ -40,7 +40,7 @@ spec:
               cpu: 100m   # 100 millicores (0.1 vCPU)
               memory: 256Mi  # 256 Megabytes
             limits:
-              cpu: 250m   # 250 millicores (0.25 vCPU)
+              cpu: 1000m   # 1000 millicores (1 vCPU)
               memory: 512Mi  # 512 Megabytes
       restartPolicy: Always
       initContainers:
