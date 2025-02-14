@@ -1,0 +1,395 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: k6/create-orders-test-constant-vus.ts
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 20 max VUs, 2m30s max duration (incl. graceful stop):
+              * createOrder_constant_vus: 20 looping VUs for 2m0s (gracefulStop: 30s)
+
+
+running (0m01.0s), 20/20 VUs, 0 complete and 0 interrupted iterations
+createOrder_constant_vus   [   1% ] 20 VUs  0m01.0s/2m0s
+
+running (0m02.0s), 20/20 VUs, 88 complete and 0 interrupted iterations
+createOrder_constant_vus   [   2% ] 20 VUs  0m02.0s/2m0s
+
+running (0m03.0s), 20/20 VUs, 213 complete and 0 interrupted iterations
+createOrder_constant_vus   [   2% ] 20 VUs  0m03.0s/2m0s
+
+running (0m04.0s), 20/20 VUs, 296 complete and 0 interrupted iterations
+createOrder_constant_vus   [   3% ] 20 VUs  0m04.0s/2m0s
+
+running (0m05.0s), 20/20 VUs, 399 complete and 0 interrupted iterations
+createOrder_constant_vus   [   4% ] 20 VUs  0m05.0s/2m0s
+
+running (0m06.0s), 20/20 VUs, 540 complete and 0 interrupted iterations
+createOrder_constant_vus   [   5% ] 20 VUs  0m06.0s/2m0s
+
+running (0m07.0s), 20/20 VUs, 679 complete and 0 interrupted iterations
+createOrder_constant_vus   [   6% ] 20 VUs  0m07.0s/2m0s
+
+running (0m08.0s), 20/20 VUs, 839 complete and 0 interrupted iterations
+createOrder_constant_vus   [   7% ] 20 VUs  0m08.0s/2m0s
+
+running (0m09.0s), 20/20 VUs, 996 complete and 0 interrupted iterations
+createOrder_constant_vus   [   7% ] 20 VUs  0m09.0s/2m0s
+
+running (0m10.0s), 20/20 VUs, 1167 complete and 0 interrupted iterations
+createOrder_constant_vus   [   8% ] 20 VUs  0m10.0s/2m0s
+
+running (0m11.0s), 20/20 VUs, 1317 complete and 0 interrupted iterations
+createOrder_constant_vus   [   9% ] 20 VUs  0m11.0s/2m0s
+
+running (0m12.0s), 20/20 VUs, 1502 complete and 0 interrupted iterations
+createOrder_constant_vus   [  10% ] 20 VUs  0m12.0s/2m0s
+
+running (0m13.0s), 20/20 VUs, 1704 complete and 0 interrupted iterations
+createOrder_constant_vus   [  11% ] 20 VUs  0m13.0s/2m0s
+
+running (0m14.0s), 20/20 VUs, 1914 complete and 0 interrupted iterations
+createOrder_constant_vus   [  12% ] 20 VUs  0m14.0s/2m0s
+
+running (0m15.0s), 20/20 VUs, 2130 complete and 0 interrupted iterations
+createOrder_constant_vus   [  12% ] 20 VUs  0m15.0s/2m0s
+
+running (0m16.0s), 20/20 VUs, 2399 complete and 0 interrupted iterations
+createOrder_constant_vus   [  13% ] 20 VUs  0m16.0s/2m0s
+
+running (0m17.0s), 20/20 VUs, 2667 complete and 0 interrupted iterations
+createOrder_constant_vus   [  14% ] 20 VUs  0m17.0s/2m0s
+
+running (0m18.0s), 20/20 VUs, 2923 complete and 0 interrupted iterations
+createOrder_constant_vus   [  15% ] 20 VUs  0m18.0s/2m0s
+
+running (0m19.0s), 20/20 VUs, 3264 complete and 0 interrupted iterations
+createOrder_constant_vus   [  16% ] 20 VUs  0m19.0s/2m0s
+
+running (0m20.0s), 20/20 VUs, 3502 complete and 0 interrupted iterations
+createOrder_constant_vus   [  17% ] 20 VUs  0m20.0s/2m0s
+
+running (0m21.0s), 20/20 VUs, 3901 complete and 0 interrupted iterations
+createOrder_constant_vus   [  17% ] 20 VUs  0m21.0s/2m0s
+
+running (0m22.0s), 20/20 VUs, 4295 complete and 0 interrupted iterations
+createOrder_constant_vus   [  18% ] 20 VUs  0m22.0s/2m0s
+
+running (0m23.0s), 20/20 VUs, 4676 complete and 0 interrupted iterations
+createOrder_constant_vus   [  19% ] 20 VUs  0m23.0s/2m0s
+
+running (0m24.0s), 20/20 VUs, 5082 complete and 0 interrupted iterations
+createOrder_constant_vus   [  20% ] 20 VUs  0m24.0s/2m0s
+
+running (0m25.0s), 20/20 VUs, 5454 complete and 0 interrupted iterations
+createOrder_constant_vus   [  21% ] 20 VUs  0m25.0s/2m0s
+
+running (0m26.0s), 20/20 VUs, 5712 complete and 0 interrupted iterations
+createOrder_constant_vus   [  22% ] 20 VUs  0m26.0s/2m0s
+
+running (0m27.0s), 20/20 VUs, 5947 complete and 0 interrupted iterations
+createOrder_constant_vus   [  22% ] 20 VUs  0m27.0s/2m0s
+
+running (0m28.0s), 20/20 VUs, 6540 complete and 0 interrupted iterations
+createOrder_constant_vus   [  23% ] 20 VUs  0m28.0s/2m0s
+
+running (0m29.0s), 20/20 VUs, 6900 complete and 0 interrupted iterations
+createOrder_constant_vus   [  24% ] 20 VUs  0m29.0s/2m0s
+
+running (0m30.0s), 20/20 VUs, 7338 complete and 0 interrupted iterations
+createOrder_constant_vus   [  25% ] 20 VUs  0m30.0s/2m0s
+
+running (0m31.0s), 20/20 VUs, 7798 complete and 0 interrupted iterations
+createOrder_constant_vus   [  26% ] 20 VUs  0m31.0s/2m0s
+
+running (0m32.0s), 20/20 VUs, 8351 complete and 0 interrupted iterations
+createOrder_constant_vus   [  27% ] 20 VUs  0m32.0s/2m0s
+
+running (0m33.0s), 20/20 VUs, 8910 complete and 0 interrupted iterations
+createOrder_constant_vus   [  27% ] 20 VUs  0m33.0s/2m0s
+
+running (0m34.0s), 20/20 VUs, 9526 complete and 0 interrupted iterations
+createOrder_constant_vus   [  28% ] 20 VUs  0m34.0s/2m0s
+
+running (0m35.0s), 20/20 VUs, 10057 complete and 0 interrupted iterations
+createOrder_constant_vus   [  29% ] 20 VUs  0m35.0s/2m0s
+
+running (0m36.0s), 20/20 VUs, 10671 complete and 0 interrupted iterations
+createOrder_constant_vus   [  30% ] 20 VUs  0m36.0s/2m0s
+
+running (0m37.0s), 20/20 VUs, 11268 complete and 0 interrupted iterations
+createOrder_constant_vus   [  31% ] 20 VUs  0m37.0s/2m0s
+
+running (0m38.0s), 20/20 VUs, 11938 complete and 0 interrupted iterations
+createOrder_constant_vus   [  32% ] 20 VUs  0m38.0s/2m0s
+
+running (0m39.0s), 20/20 VUs, 12564 complete and 0 interrupted iterations
+createOrder_constant_vus   [  32% ] 20 VUs  0m39.0s/2m0s
+
+running (0m40.0s), 20/20 VUs, 13072 complete and 0 interrupted iterations
+createOrder_constant_vus   [  33% ] 20 VUs  0m40.0s/2m0s
+
+running (0m41.0s), 20/20 VUs, 13731 complete and 0 interrupted iterations
+createOrder_constant_vus   [  34% ] 20 VUs  0m41.0s/2m0s
+
+running (0m42.0s), 20/20 VUs, 14319 complete and 0 interrupted iterations
+createOrder_constant_vus   [  35% ] 20 VUs  0m42.0s/2m0s
+
+running (0m43.0s), 20/20 VUs, 14929 complete and 0 interrupted iterations
+createOrder_constant_vus   [  36% ] 20 VUs  0m43.0s/2m0s
+
+running (0m44.0s), 20/20 VUs, 15549 complete and 0 interrupted iterations
+createOrder_constant_vus   [  37% ] 20 VUs  0m44.0s/2m0s
+
+running (0m45.0s), 20/20 VUs, 16148 complete and 0 interrupted iterations
+createOrder_constant_vus   [  37% ] 20 VUs  0m45.0s/2m0s
+
+running (0m46.0s), 20/20 VUs, 16773 complete and 0 interrupted iterations
+createOrder_constant_vus   [  38% ] 20 VUs  0m46.0s/2m0s
+
+running (0m47.0s), 20/20 VUs, 17354 complete and 0 interrupted iterations
+createOrder_constant_vus   [  39% ] 20 VUs  0m47.0s/2m0s
+
+running (0m48.0s), 20/20 VUs, 17920 complete and 0 interrupted iterations
+createOrder_constant_vus   [  40% ] 20 VUs  0m48.0s/2m0s
+
+running (0m49.0s), 20/20 VUs, 18534 complete and 0 interrupted iterations
+createOrder_constant_vus   [  41% ] 20 VUs  0m49.0s/2m0s
+
+running (0m50.0s), 20/20 VUs, 19186 complete and 0 interrupted iterations
+createOrder_constant_vus   [  42% ] 20 VUs  0m50.0s/2m0s
+
+running (0m51.0s), 20/20 VUs, 19782 complete and 0 interrupted iterations
+createOrder_constant_vus   [  42% ] 20 VUs  0m51.0s/2m0s
+
+running (0m52.0s), 20/20 VUs, 20444 complete and 0 interrupted iterations
+createOrder_constant_vus   [  43% ] 20 VUs  0m52.0s/2m0s
+
+running (0m53.0s), 20/20 VUs, 21036 complete and 0 interrupted iterations
+createOrder_constant_vus   [  44% ] 20 VUs  0m53.0s/2m0s
+
+running (0m54.0s), 20/20 VUs, 21587 complete and 0 interrupted iterations
+createOrder_constant_vus   [  45% ] 20 VUs  0m54.0s/2m0s
+
+running (0m55.0s), 20/20 VUs, 22218 complete and 0 interrupted iterations
+createOrder_constant_vus   [  46% ] 20 VUs  0m55.0s/2m0s
+
+running (0m56.0s), 20/20 VUs, 22841 complete and 0 interrupted iterations
+createOrder_constant_vus   [  47% ] 20 VUs  0m56.0s/2m0s
+
+running (0m57.0s), 20/20 VUs, 23457 complete and 0 interrupted iterations
+createOrder_constant_vus   [  47% ] 20 VUs  0m57.0s/2m0s
+
+running (0m58.0s), 20/20 VUs, 24085 complete and 0 interrupted iterations
+createOrder_constant_vus   [  48% ] 20 VUs  0m58.0s/2m0s
+
+running (0m59.0s), 20/20 VUs, 24724 complete and 0 interrupted iterations
+createOrder_constant_vus   [  49% ] 20 VUs  0m59.0s/2m0s
+
+running (1m00.0s), 20/20 VUs, 25328 complete and 0 interrupted iterations
+createOrder_constant_vus   [  50% ] 20 VUs  1m00.0s/2m0s
+
+running (1m01.0s), 20/20 VUs, 25947 complete and 0 interrupted iterations
+createOrder_constant_vus   [  51% ] 20 VUs  1m01.0s/2m0s
+
+running (1m02.0s), 20/20 VUs, 26528 complete and 0 interrupted iterations
+createOrder_constant_vus   [  52% ] 20 VUs  1m02.0s/2m0s
+
+running (1m03.0s), 20/20 VUs, 27136 complete and 0 interrupted iterations
+createOrder_constant_vus   [  52% ] 20 VUs  1m03.0s/2m0s
+
+running (1m04.0s), 20/20 VUs, 27765 complete and 0 interrupted iterations
+createOrder_constant_vus   [  53% ] 20 VUs  1m04.0s/2m0s
+
+running (1m05.0s), 20/20 VUs, 28332 complete and 0 interrupted iterations
+createOrder_constant_vus   [  54% ] 20 VUs  1m05.0s/2m0s
+
+running (1m06.0s), 20/20 VUs, 28906 complete and 0 interrupted iterations
+createOrder_constant_vus   [  55% ] 20 VUs  1m06.0s/2m0s
+
+running (1m07.0s), 20/20 VUs, 29477 complete and 0 interrupted iterations
+createOrder_constant_vus   [  56% ] 20 VUs  1m07.0s/2m0s
+
+running (1m08.0s), 20/20 VUs, 30101 complete and 0 interrupted iterations
+createOrder_constant_vus   [  57% ] 20 VUs  1m08.0s/2m0s
+
+running (1m09.0s), 20/20 VUs, 30742 complete and 0 interrupted iterations
+createOrder_constant_vus   [  57% ] 20 VUs  1m09.0s/2m0s
+
+running (1m10.0s), 20/20 VUs, 31324 complete and 0 interrupted iterations
+createOrder_constant_vus   [  58% ] 20 VUs  1m10.0s/2m0s
+
+running (1m11.0s), 20/20 VUs, 31897 complete and 0 interrupted iterations
+createOrder_constant_vus   [  59% ] 20 VUs  1m11.0s/2m0s
+
+running (1m12.0s), 20/20 VUs, 32533 complete and 0 interrupted iterations
+createOrder_constant_vus   [  60% ] 20 VUs  1m12.0s/2m0s
+
+running (1m13.0s), 20/20 VUs, 33154 complete and 0 interrupted iterations
+createOrder_constant_vus   [  61% ] 20 VUs  1m13.0s/2m0s
+
+running (1m14.0s), 20/20 VUs, 33746 complete and 0 interrupted iterations
+createOrder_constant_vus   [  62% ] 20 VUs  1m14.0s/2m0s
+
+running (1m15.0s), 20/20 VUs, 34387 complete and 0 interrupted iterations
+createOrder_constant_vus   [  62% ] 20 VUs  1m15.0s/2m0s
+
+running (1m16.0s), 20/20 VUs, 34946 complete and 0 interrupted iterations
+createOrder_constant_vus   [  63% ] 20 VUs  1m16.0s/2m0s
+
+running (1m17.0s), 20/20 VUs, 35499 complete and 0 interrupted iterations
+createOrder_constant_vus   [  64% ] 20 VUs  1m17.0s/2m0s
+
+running (1m18.0s), 20/20 VUs, 36111 complete and 0 interrupted iterations
+createOrder_constant_vus   [  65% ] 20 VUs  1m18.0s/2m0s
+
+running (1m19.0s), 20/20 VUs, 36733 complete and 0 interrupted iterations
+createOrder_constant_vus   [  66% ] 20 VUs  1m19.0s/2m0s
+
+running (1m20.0s), 20/20 VUs, 37319 complete and 0 interrupted iterations
+createOrder_constant_vus   [  67% ] 20 VUs  1m20.0s/2m0s
+
+running (1m21.0s), 20/20 VUs, 37931 complete and 0 interrupted iterations
+createOrder_constant_vus   [  67% ] 20 VUs  1m21.0s/2m0s
+
+running (1m22.0s), 20/20 VUs, 38495 complete and 0 interrupted iterations
+createOrder_constant_vus   [  68% ] 20 VUs  1m22.0s/2m0s
+
+running (1m23.0s), 20/20 VUs, 39091 complete and 0 interrupted iterations
+createOrder_constant_vus   [  69% ] 20 VUs  1m23.0s/2m0s
+
+running (1m24.0s), 20/20 VUs, 39707 complete and 0 interrupted iterations
+createOrder_constant_vus   [  70% ] 20 VUs  1m24.0s/2m0s
+
+running (1m25.0s), 20/20 VUs, 40230 complete and 0 interrupted iterations
+createOrder_constant_vus   [  71% ] 20 VUs  1m25.0s/2m0s
+
+running (1m26.0s), 20/20 VUs, 40820 complete and 0 interrupted iterations
+createOrder_constant_vus   [  72% ] 20 VUs  1m26.0s/2m0s
+
+running (1m27.0s), 20/20 VUs, 41418 complete and 0 interrupted iterations
+createOrder_constant_vus   [  72% ] 20 VUs  1m27.0s/2m0s
+
+running (1m28.0s), 20/20 VUs, 42025 complete and 0 interrupted iterations
+createOrder_constant_vus   [  73% ] 20 VUs  1m28.0s/2m0s
+
+running (1m29.0s), 20/20 VUs, 42633 complete and 0 interrupted iterations
+createOrder_constant_vus   [  74% ] 20 VUs  1m29.0s/2m0s
+
+running (1m30.0s), 20/20 VUs, 43213 complete and 0 interrupted iterations
+createOrder_constant_vus   [  75% ] 20 VUs  1m30.0s/2m0s
+
+running (1m31.0s), 20/20 VUs, 43859 complete and 0 interrupted iterations
+createOrder_constant_vus   [  76% ] 20 VUs  1m31.0s/2m0s
+
+running (1m32.0s), 20/20 VUs, 44486 complete and 0 interrupted iterations
+createOrder_constant_vus   [  77% ] 20 VUs  1m32.0s/2m0s
+
+running (1m33.0s), 20/20 VUs, 45094 complete and 0 interrupted iterations
+createOrder_constant_vus   [  77% ] 20 VUs  1m33.0s/2m0s
+
+running (1m34.0s), 20/20 VUs, 45700 complete and 0 interrupted iterations
+createOrder_constant_vus   [  78% ] 20 VUs  1m34.0s/2m0s
+
+running (1m35.0s), 20/20 VUs, 46283 complete and 0 interrupted iterations
+createOrder_constant_vus   [  79% ] 20 VUs  1m35.0s/2m0s
+
+running (1m36.0s), 20/20 VUs, 46880 complete and 0 interrupted iterations
+createOrder_constant_vus   [  80% ] 20 VUs  1m36.0s/2m0s
+
+running (1m37.0s), 20/20 VUs, 47512 complete and 0 interrupted iterations
+createOrder_constant_vus   [  81% ] 20 VUs  1m37.0s/2m0s
+
+running (1m38.0s), 20/20 VUs, 48107 complete and 0 interrupted iterations
+createOrder_constant_vus   [  82% ] 20 VUs  1m38.0s/2m0s
+
+running (1m39.0s), 20/20 VUs, 48706 complete and 0 interrupted iterations
+createOrder_constant_vus   [  82% ] 20 VUs  1m39.0s/2m0s
+
+running (1m40.0s), 20/20 VUs, 49146 complete and 0 interrupted iterations
+createOrder_constant_vus   [  83% ] 20 VUs  1m40.0s/2m0s
+
+running (1m41.0s), 20/20 VUs, 49736 complete and 0 interrupted iterations
+createOrder_constant_vus   [  84% ] 20 VUs  1m41.0s/2m0s
+
+running (1m42.0s), 20/20 VUs, 50386 complete and 0 interrupted iterations
+createOrder_constant_vus   [  85% ] 20 VUs  1m42.0s/2m0s
+
+running (1m43.0s), 20/20 VUs, 50991 complete and 0 interrupted iterations
+createOrder_constant_vus   [  86% ] 20 VUs  1m43.0s/2m0s
+
+running (1m44.0s), 20/20 VUs, 51550 complete and 0 interrupted iterations
+createOrder_constant_vus   [  87% ] 20 VUs  1m44.0s/2m0s
+
+running (1m45.0s), 20/20 VUs, 52150 complete and 0 interrupted iterations
+createOrder_constant_vus   [  87% ] 20 VUs  1m45.0s/2m0s
+
+running (1m46.0s), 20/20 VUs, 52713 complete and 0 interrupted iterations
+createOrder_constant_vus   [  88% ] 20 VUs  1m46.0s/2m0s
+
+running (1m47.0s), 20/20 VUs, 53327 complete and 0 interrupted iterations
+createOrder_constant_vus   [  89% ] 20 VUs  1m47.0s/2m0s
+
+running (1m48.0s), 20/20 VUs, 53964 complete and 0 interrupted iterations
+createOrder_constant_vus   [  90% ] 20 VUs  1m48.0s/2m0s
+
+running (1m49.0s), 20/20 VUs, 54559 complete and 0 interrupted iterations
+createOrder_constant_vus   [  91% ] 20 VUs  1m49.0s/2m0s
+
+running (1m50.0s), 20/20 VUs, 55182 complete and 0 interrupted iterations
+createOrder_constant_vus   [  92% ] 20 VUs  1m50.0s/2m0s
+
+running (1m51.0s), 20/20 VUs, 55781 complete and 0 interrupted iterations
+createOrder_constant_vus   [  92% ] 20 VUs  1m51.0s/2m0s
+
+running (1m52.0s), 20/20 VUs, 56427 complete and 0 interrupted iterations
+createOrder_constant_vus   [  93% ] 20 VUs  1m52.0s/2m0s
+
+running (1m53.0s), 20/20 VUs, 57004 complete and 0 interrupted iterations
+createOrder_constant_vus   [  94% ] 20 VUs  1m53.0s/2m0s
+
+running (1m54.0s), 20/20 VUs, 57552 complete and 0 interrupted iterations
+createOrder_constant_vus   [  95% ] 20 VUs  1m54.0s/2m0s
+
+running (1m55.0s), 20/20 VUs, 58185 complete and 0 interrupted iterations
+createOrder_constant_vus   [  96% ] 20 VUs  1m55.0s/2m0s
+
+running (1m56.0s), 20/20 VUs, 58778 complete and 0 interrupted iterations
+createOrder_constant_vus   [  97% ] 20 VUs  1m56.0s/2m0s
+
+running (1m57.0s), 20/20 VUs, 59394 complete and 0 interrupted iterations
+createOrder_constant_vus   [  97% ] 20 VUs  1m57.0s/2m0s
+
+running (1m58.0s), 20/20 VUs, 59970 complete and 0 interrupted iterations
+createOrder_constant_vus   [  98% ] 20 VUs  1m58.0s/2m0s
+
+running (1m59.0s), 20/20 VUs, 60588 complete and 0 interrupted iterations
+createOrder_constant_vus   [  99% ] 20 VUs  1m59.0s/2m0s
+
+running (2m00.0s), 20/20 VUs, 61157 complete and 0 interrupted iterations
+createOrder_constant_vus   [ 100% ] 20 VUs  2m00.0s/2m0s
+
+     data_received..................: 26 MB 216 kB/s
+     data_sent......................: 16 MB 134 kB/s
+     http_req_blocked...............: avg=7.77µs  min=0s     med=2µs     max=5.2ms    p(90)=5µs     p(95)=7µs     
+     http_req_connecting............: avg=3.4µs   min=0s     med=0s      max=5.09ms   p(90)=0s      p(95)=0s      
+   ✓ http_req_duration..............: avg=39.13ms min=2.15ms med=44.63ms max=1.25s    p(90)=89.13ms p(95)=99.16ms 
+       { expected_response:true }...: avg=39.13ms min=2.15ms med=44.63ms max=1.25s    p(90)=89.13ms p(95)=99.16ms 
+   ✓ http_req_failed................: 0.00% 0 out of 61177
+     http_req_receiving.............: avg=1.28ms  min=6µs    med=25µs    max=116.84ms p(90)=82µs    p(95)=964.19µs
+     http_req_sending...............: avg=16.93µs min=2µs    med=8µs     max=4.1ms    p(90)=18µs    p(95)=28µs    
+     http_req_tls_handshaking.......: avg=0s      min=0s     med=0s      max=0s       p(90)=0s      p(95)=0s      
+     http_req_waiting...............: avg=37.83ms min=2.12ms med=44ms    max=1.21s    p(90)=88.36ms p(95)=97.95ms 
+     http_reqs......................: 61177 509.652023/s
+     iteration_duration.............: avg=39.22ms min=2.21ms med=44.72ms max=1.25s    p(90)=89.21ms p(95)=99.29ms 
+     iterations.....................: 61177 509.652023/s
+     vus............................: 20    min=20         max=20
+     vus_max........................: 20    min=20         max=20
+
+
+running (2m00.0s), 00/20 VUs, 61177 complete and 0 interrupted iterations
+createOrder_constant_vus ✓ [ 100% ] 20 VUs  2m0s
