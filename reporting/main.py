@@ -1,6 +1,7 @@
 import os
+import sys
+
 import numpy as np
-import argparse
 import re
 
 
@@ -224,11 +225,26 @@ def convert_to_ms(value, unit):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Compute aggregated statistics from data.txt and run.txt files.")
-    parser.add_argument("directory", type=str, help="Directory containing the data.txt and run.txt files")
-    args = parser.parse_args()
-    aggregate_data_files(args.directory)
-    aggregate_run_files(args.directory)
+    current_directory = os.getcwd()
+    experiment_directories = []
+    experiment_directories_name_pattern = re.compile(r"^experiment\d+$")
+    for directory_name in os.listdir(current_directory):
+        directory_path = os.path.join(current_directory, directory_name)
+        if os.path.isdir(directory_path) and experiment_directories_name_pattern.match(directory_name):
+            experiment_directories.append(directory_path)
+
+    for experiment_directory in experiment_directories:
+        for subdirectory in ["monolith", "microservices"]:
+            directory = os.path.join(experiment_directory, subdirectory)
+            if os.path.isdir(directory):
+                report_path = os.path.join(directory, "report.txt")
+                with open(report_path, "w") as report_file:
+                    sys.stdout = report_file
+                    print(f"Processing: {"/".join(directory.split(os.sep)[-2:])}")
+                    aggregate_data_files(directory)
+                    print("\n")
+                    aggregate_run_files(directory)
+                sys.stdout = sys.__stdout__
 
 
 if __name__ == "__main__":
