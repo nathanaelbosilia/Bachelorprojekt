@@ -1,0 +1,19 @@
+Processing: experiment1/microservices
+Aggregated statistics for data files:
+order mails: mean = 4904, min = 3951, max = 5677
+orders: mean = 4904, min = 3951, max = 5677
+positions: mean = 4904, min = 3951, max = 5677
+shipment mails: mean = 4904, min = 3951, max = 5677
+shipments: mean = 4904, min = 3951, max = 5677
+
+
+Aggregated statistics for run files:
+http_reqs: mean = 4904, min = 3951, max = 5677
+http_reqs_per_second: mean = 40.76/s, min = 32.84/s, max = 47.19/s
+http_req_failed: mean = 0.00%, min = 0.00%, max = 0.00%
+http_req_duration_avg: mean = 498.24ms, min = 423.24ms, max = 608.07ms
+http_req_duration_201_avg: mean = 498.24ms, min = 423.24ms, max = 608.07ms
+http_req_duration_201_min: mean = 23.72ms, min = 4.48ms, max = 43.76ms
+http_req_duration_min: mean = 23.72ms, min = 4.48ms, max = 43.76ms
+http_req_duration_max: mean = 6670.00ms, min = 5020.00ms, max = 8840.00ms
+http_req_duration_201_max: mean = 6670.00ms, min = 5020.00ms, max = 8840.00ms

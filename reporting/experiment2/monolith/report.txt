@@ -1,0 +1,18 @@
+Processing: experiment2/monolith
+Aggregated statistics for data files:
+mails: mean = 831, min = 798, max = 937
+orders: mean = 831, min = 798, max = 937
+positions: mean = 831, min = 798, max = 937
+shipments: mean = 831, min = 798, max = 937
+
+
+Aggregated statistics for run files:
+http_reqs: mean = 1186, min = 1179, max = 1191
+http_reqs_per_second: mean = 8.19/s, min = 7.86/s, max = 8.83/s
+http_req_failed: mean = 29.95%, min = 21.32%, max = 32.31%
+http_req_duration_avg: mean = 189.34ms, min = 139.08ms, max = 268.82ms
+http_req_duration_201_avg: mean = 82.96ms, min = 48.29ms, max = 96.73ms
+http_req_duration_201_min: mean = 8.02ms, min = 6.90ms, max = 8.72ms
+http_req_duration_min: mean = 0.59ms, min = 0.00ms, max = 0.77ms
+http_req_duration_max: mean = 59994.00ms, min = 59990.00ms, max = 60000.00ms
+http_req_duration_201_max: mean = 2586.00ms, min = 2500.00ms, max = 2730.00ms
