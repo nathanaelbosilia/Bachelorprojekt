@@ -1,5 +1,5 @@
 .DS_Store
-venv/
+results/venv/
 
 # Java.gitignore
 # https://github.com/github/gitignore/blob/main/Java.gitignore
