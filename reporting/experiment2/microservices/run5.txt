@@ -476,8 +476,7 @@ createOrder_shared_iterations ↓ [ 100% ] 02/20 VUs  2m0s  10.00 iters/s
      http_req_tls_handshaking.......: avg=0s        min=0s     med=0s     max=0s       p(90)=0s      p(95)=0s      
      http_req_waiting...............: avg=139.34ms  min=150µs  med=8.44ms max=59.99s   p(90)=12.92ms p(95)=15.2ms  
      http_reqs......................: 1195   7.966648/s
-     http_reqs_201..................: avg=54.776631 min=6.044  med=9.617  max=1957.427 p(90)=14.7862 p(95)=52.1996 
-     iteration_duration.............: avg=141.42ms  min=1.29ms med=9.06ms max=1m0s     p(90)=14.21ms p(95)=49.59ms 
+     iteration_duration.............: avg=141.42ms  min=1.29ms med=9.06ms max=1m0s     p(90)=14.21ms p(95)=49.59ms
      iterations.....................: 1195   7.966648/s
      vus............................: 2      min=0           max=19
      vus_max........................: 20     min=20          max=20
