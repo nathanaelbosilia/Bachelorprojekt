@@ -18,4 +18,3 @@ spec:
     mode: fixed
     value: '1'
     action: pod-kill
-    gracePeriod: 1

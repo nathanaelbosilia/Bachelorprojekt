@@ -17,4 +17,3 @@ spec:
         chaos-mesh.org/target: 'true'
     mode: one
     action: pod-kill
-    gracePeriod: 1
