@@ -8,7 +8,7 @@ export const options = {
             rate: 10,
             timeUnit: '1s',
             duration: '2m',
-            preAllocatedVUs: 20
+            preAllocatedVUs: 40
         }
     }
 }
