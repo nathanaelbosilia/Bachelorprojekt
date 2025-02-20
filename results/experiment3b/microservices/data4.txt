@@ -1,0 +1,5 @@
+orders: 1038
+positions: 1038
+shipments: 1038
+mails: 1956
+(1201+1141) => all turned out 2076 after the notification service came back up after a few seconds!

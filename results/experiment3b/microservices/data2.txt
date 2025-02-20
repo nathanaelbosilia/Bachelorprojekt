@@ -1,0 +1,5 @@
+orders: 1050
+positions: 1050
+shipments: 992
+mails: 2042
+(1050+992) => all turned out 1201 after the shipment service came back up after a few seconds!
