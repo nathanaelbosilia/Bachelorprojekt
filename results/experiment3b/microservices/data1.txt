@@ -1,4 +1,10 @@
 orders: 1200
+orders-final: 1200
 positions: 1200
+positions-final: 1200
 shipments: 1200
-mails: 1200
+shipments-final: 1200
+order-mails: 1200
+order-mails-final: 1200
+shipment-mails: 1200
+shipment-mails-final: 1200

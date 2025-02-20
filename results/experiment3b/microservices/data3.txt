@@ -1,5 +1,10 @@
 orders: 1201
+orders-final: 1201
 positions: 1201
+positions-final: 1201
 shipments: 1141
-mails: 2342
-(1201+1141) => all turned out 1201 after the shipment service came back up after a few seconds!
+shipments-final: 1201
+order-mails: 1201
+order-mails-final: 1201
+shipment-mails: 1141
+shipment-mails-final: 1201

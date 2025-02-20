@@ -1,9 +1,15 @@
 Processing: experiment3b/microservices
 Aggregated statistics for data files:
-mails: mean = 1913, min = 1200, max = 2342
+order-mails: mean = 1106, min = 1038, max = 1201
+order-mails-final: mean = 1106, min = 1038, max = 1201
 orders: mean = 1106, min = 1038, max = 1201
+orders-final: mean = 1106, min = 1038, max = 1201
 positions: mean = 1106, min = 1038, max = 1201
-shipments: mean = 1071, min = 986, max = 1200
+positions-final: mean = 1106, min = 1038, max = 1201
+shipment-mails: mean = 1047, min = 918, max = 1200
+shipment-mails-final: mean = 1106, min = 1038, max = 1201
+shipments: mean = 1047, min = 918, max = 1200
+shipments-final: mean = 1106, min = 1038, max = 1201
 
 
 Aggregated statistics for run files:
