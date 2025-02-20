@@ -12,7 +12,7 @@ The python version used for development and testing is 3.12.2.
 ``pip install -r requirements.txt``
 
 # Run the script
-`` python main.py experiment1/monolith``
+`` python main.py``
 
 # Deactivate venv
 ``deactivate``
