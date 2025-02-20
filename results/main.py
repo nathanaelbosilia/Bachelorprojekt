@@ -227,7 +227,7 @@ def convert_to_ms(value, unit):
 def main():
     current_directory = os.getcwd()
     experiment_directories = []
-    experiment_directories_name_pattern = re.compile(r"^experiment\d+$")
+    experiment_directories_name_pattern = re.compile(r"^experiment\d+[a-zA-Z]?$")
     for directory_name in os.listdir(current_directory):
         directory_path = os.path.join(current_directory, directory_name)
         if os.path.isdir(directory_path) and experiment_directories_name_pattern.match(directory_name):
