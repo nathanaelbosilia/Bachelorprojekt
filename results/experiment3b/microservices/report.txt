@@ -1,0 +1,18 @@
+Processing: experiment3b/microservices
+Aggregated statistics for data files:
+mails: mean = 1913, min = 1200, max = 2342
+orders: mean = 1106, min = 1038, max = 1201
+positions: mean = 1106, min = 1038, max = 1201
+shipments: mean = 1071, min = 986, max = 1200
+
+
+Aggregated statistics for run files:
+http_reqs: mean = 1200, min = 1200, max = 1201
+http_reqs_per_second: mean = 10.00/s, min = 10.00/s, max = 10.01/s
+http_req_failed: mean = 7.88%, min = 0.00%, max = 13.57%
+http_req_duration_avg: mean = 22.28ms, min = 10.80ms, max = 33.33ms
+http_req_duration_201_avg: mean = 24.87ms, min = 10.80ms, max = 38.21ms
+http_req_duration_201_min: mean = 4.99ms, min = 4.41ms, max = 5.48ms
+http_req_duration_min: mean = 2.08ms, min = 0.00ms, max = 4.66ms
+http_req_duration_max: mean = 1333.42ms, min = 283.70ms, max = 2150.00ms
+http_req_duration_201_max: mean = 1333.42ms, min = 283.70ms, max = 2150.00ms
